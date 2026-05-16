@@ -57,14 +57,24 @@ const toolsAndTechStack = {
 const projects = {
     items: [
         {
-            name: "GitHub Resume",
-            description: "A web application that generates a resume based on a GitHub profile.",
+            name: "API Resume",
+            description: "An API that serves my resume and personal information, built with Fastify and TypeScript, and deployed on a self-hosted server. It provides endpoints for about me, skills, projects, tools, experience, interests and health check.",
             url: "https://github.com/zPush/aboutme-api",
         },
         {
             name: "Personal Website",
             description: "My company website to showcase what i have to offer and how i work.",
             url: "https://tordalk.net",
+        },
+        {
+            name: "Newsent",
+            description: "A mobile news app built with React Native, PostgreSQL and DragonflyDB — using AI to personalize and rank content per user.",
+            url: "https://newsent.app"
+        },
+        {
+            name: "Undisclosed Client Project",
+            description: "Projects for clients that i can't disclose, but they involve building web applications with Next.js and self hosted CMS.",
+            url: "https://tordalk.net/projekte"
         }
     ],
 }
@@ -75,7 +85,7 @@ const experience = {
             company: "Tordalk",
             role: "Founder & Full Stack Developer",
             duration: "2025 - Present",
-            description: "Founded Tordalk, a company focused on delivering high-quality web solutions. As a aspiring full stack developer, I handle everything from frontend design to backend development and deployment on a server."
+            description: "Founded Tordalk, a company focused on delivering high-quality web solutions. As an aspiring full stack developer, I handle everything from frontend design to backend development and deployment on a server."
         },
         {
             company: "Student",
