@@ -72,6 +72,11 @@ const projects = {
             url: "https://newsent.app"
         },
         {
+            name: "DroneForum API",
+            description: "A REST API backend for a drone enthusiast forum, built as a learning project to practice TypeScript backend development, authentication patterns, and integration testing. Features stateless JWT auth with httpOnly refresh cookies, bcrypt password hashing, Zod request validation, Drizzle ORM with PostgreSQL, and integration tests against a real test database.",
+            url: "https://github.com/zPush/drone-forum",
+        },
+        {
             name: "Undisclosed Client Project",
             description: "Projects for clients that i can't disclose, but they involve building web applications with Next.js and self hosted CMS.",
             url: "https://tordalk.net/projekte"
