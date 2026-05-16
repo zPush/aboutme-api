@@ -111,15 +111,15 @@ const interests = {
 
 export default async function aboutRoutes(fastify: FastifyInstance) {
 
-    fastify.get("/about", async (request, reply) => {
+    fastify.get("/about", async (_request, reply) => {
         return reply.status(200).send(aboutMe)
     })
 
-    fastify.get("/skills", async (request, reply) => {
+    fastify.get("/skills", async (_request, reply) => {
         return reply.status(200).send({ skills: aboutMe.skills })
     })
 
-    fastify.get("/projects", async (request, reply) => {
+    fastify.get("/projects", async (_request, reply) => {
         const items = await Promise.all(
         projects.items.map(async (p) => ({
             ...p,
@@ -129,20 +129,36 @@ export default async function aboutRoutes(fastify: FastifyInstance) {
         return reply.status(200).send({ items })
     })
 
-    fastify.get("/tools", async (request, reply) => {
+    fastify.get("/tools", async (_request, reply) => {
         return reply.status(200).send(toolsAndTechStack)
     })
 
-    fastify.get("/experience", async (request, reply) => {
+    fastify.get("/experience", async (_request, reply) => {
         return reply.status(200).send(experience)
     })
 
-    fastify.get("/interests", async (request, reply) => {
+    fastify.get("/interests", async (_request, reply) => {
         return reply.status(200).send(interests)
     })
 
-    fastify.get("/health", async (request, reply) => {
+    fastify.get("/health", async (_request, reply) => {
         return reply.status(200).send({ status: "ok" })
+    })
+
+    fastify.get("/resume", async (_request, reply) => {
+        const projectItems = await Promise.all(
+            projects.items.map(async (p) => ({
+                ...p,
+                status: await pingSite(p.url)
+            }))
+        )
+        return reply.status(200).send({
+            ...aboutMe,
+            experience: experience.items,
+            projects: projectItems,
+            tools: toolsAndTechStack.items,
+            interests: interests.items
+        })
     })
 }
 

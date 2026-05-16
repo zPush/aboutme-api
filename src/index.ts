@@ -16,9 +16,10 @@ await fastify.register(rateLimit, {
   timeWindow: "1 minute"
 })
 
-fastify.get('/', async function handler(request, reply) {
+fastify.get('/', async function handler(_request, reply) {
   return reply.status(200).send({
     routes: [
+      "GET /resume",
       "GET /about",
       "GET /skills",
       "GET /projects",
