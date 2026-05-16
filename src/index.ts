@@ -1,13 +1,11 @@
 import Fastify from 'fastify'
+import infoRoutes from "./routes/about.js"
 
 const fastify = Fastify({
   logger: true
 })
 
-// Declare a route
-fastify.get('/', async function handler (request, reply) {
-  return { hello: 'world' }
-})
+fastify.register(infoRoutes) // Register imported routes
 
 // Run the server!
 try {
