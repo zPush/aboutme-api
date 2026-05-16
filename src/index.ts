@@ -44,5 +44,6 @@ try {
   await fastify.listen({ port: 3000 })
 } catch (err) {
   fastify.log.error(err)
+  // @ts-ignore
   process.exit(1)
 }
