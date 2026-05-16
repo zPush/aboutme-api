@@ -2,6 +2,10 @@
 
 A personal resume API built with Fastify and TypeScript. Returns structured data about me, my projects, tools, experience, and interests.
 
+### Why Fastify?
+
+Faster than Express out of the box, better TypeScript support, and a clean plugin system for things like CORS and rate limiting without extra glue code.
+
 ## Endpoints
 
 | Method | Route | Description |
@@ -24,6 +28,10 @@ npm run api
 ```
 
 Server runs on `http://localhost:3000`.
+
+## Live
+
+https://api.tordalk.net
 
 ## Stack
 
