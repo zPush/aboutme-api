@@ -22,16 +22,3 @@ jobs:
         with:
           push: true
           tags: ghcr.io/zpush/aboutme-api:latest
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            docker compose pull
-            docker compose up -d
