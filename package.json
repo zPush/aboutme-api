@@ -4,5 +4,9 @@
   },
   "dependencies": {
     "fastify": "^5.8.5"
+  },
+  "type": "module",
+  "scripts": {
+    "api": "npx tsx src/index.ts"
   }
 }
